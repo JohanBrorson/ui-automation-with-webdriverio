@@ -4,6 +4,9 @@
   "main": "index.js",
   "repository": "git@github.com:JohanBrorson/ui-automation-with-webdriverio.git",
   "license": "MIT",
+  "scripts": {
+    "test": "node ./node_modules/.bin/wdio ./wdio.conf.js"
+  },
   "devDependencies": {
     "@wdio/cli": "^5.13.1",
     "@wdio/dot-reporter": "^5.12.1",
