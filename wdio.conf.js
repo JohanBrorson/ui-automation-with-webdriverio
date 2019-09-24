@@ -10,6 +10,8 @@ exports.config = {
     //
     // Override default path ('/wd/hub') for chromedriver service.
     path: '/',
+
+    port: 9999,
     //
     // ==================
     // Specify Test Files
@@ -20,7 +22,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -186,7 +188,6 @@ exports.config = {
         const chaiWebdriver = require('chai-webdriverio').default;
 
         chai.use(chaiWebdriver(browser));
-
 
         global.assert = chai.assert;
         global.should = chai.should;
