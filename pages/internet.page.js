@@ -5,6 +5,9 @@ class Internet {
   get subHeading() {
     return $("h2");
   }
+  get h3Heading() {
+    return $("h3");
+  }
   get pageFooter() {
     return $("#page-footer");
   }
@@ -29,16 +32,15 @@ class Internet {
   }
 
   getListItemTextAtIndex(index) {
-    console.log(this.listItemAtIndex(index).getText());
+    this.listItemAtIndex(index).waitForDisplayed();
+    return this.listItemAtIndex(index).getText();
   }
 
   clickOnFirstLink() {
     if (this.firstLink.isDisplayed() === true) {
       this.firstLink.click();
     }
-
-    // Pause 5 s to see what's happening
-    browser.pause(5000);
+    this.h3Heading.waitForDisplayed();
   }
 }
 
