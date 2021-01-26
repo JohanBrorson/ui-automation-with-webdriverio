@@ -1,6 +1,6 @@
 const dynamicControlsPage = require("../pages/dynamic-controls.page");
 
-describe("", () => {
+describe("waitForEnable", () => {
   it("should wait for the input field to be enabled/disabled", () => {
     dynamicControlsPage.navigate();
     dynamicControlsPage.toggleEnableDisableButton();

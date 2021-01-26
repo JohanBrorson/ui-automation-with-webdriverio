@@ -7,6 +7,9 @@ class DynamicControls {
   get inputField() {
     return $("#input-example input");
   }
+  get pageButton() {
+    return $("#checkbox-example button");
+  }
 
   navigate() {
     browser.url("/dynamic_controls");
@@ -25,6 +28,21 @@ class DynamicControls {
   isInputFieldDisabled() {
     this.inputField.waitForEnabled(timeout, true);
     return !this.inputField.isEnabled();
+  }
+
+  clickPageButton() {
+    this.pageButton.waitForDisplayed();
+    this.pageButton.click();
+  }
+
+  waitUntilPageButtonTextEquals(text) {
+    try {
+      return browser.waitUntil(() => {
+        return this.pageButton.getText() === text;
+      });
+    } catch (err) {
+      return false;
+    }
   }
 }
 
