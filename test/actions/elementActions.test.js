@@ -1,10 +1,10 @@
 const { expect } = require("chai");
-const internetPage = require("../pages/internet.page");
-const checkboxesPage = require("../pages/checkboxes.page");
-const loginPage = require("../pages/login.page");
-const secureAreaPage = require("../pages/secure-area.page");
-const hoversPage = require("../pages/hovers.page");
-const keyPressesPage = require("../pages/key-presses.page");
+const internetPage = require("../../pages/internet.page");
+const checkboxesPage = require("../../pages/checkboxes.page");
+const loginPage = require("../../pages/login.page");
+const secureAreaPage = require("../../pages/secure-area.page");
+const hoversPage = require("../../pages/hovers.page");
+const keyPressesPage = require("../../pages/key-presses.page");
 
 describe("Test element actions", () => {
   it("should click element", () => {
