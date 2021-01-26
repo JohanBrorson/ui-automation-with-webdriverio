@@ -42,6 +42,10 @@ class Internet {
     }
     this.h3Heading.waitForDisplayed();
   }
+
+  scrollToPageFooter() {
+    this.pageFooter.scrollIntoView();
+  }
 }
 
 module.exports = new Internet();

@@ -3,6 +3,8 @@ const internetPage = require("../pages/internet.page");
 const checkboxesPage = require("../pages/checkboxes.page");
 const loginPage = require("../pages/login.page");
 const secureAreaPage = require("../pages/secure-area.page");
+const hoversPage = require("../pages/hovers.page");
+const keyPressesPage = require("../pages/key-presses.page");
 
 describe("Test element actions", () => {
   it("should click element", () => {
@@ -28,5 +30,18 @@ describe("Test element actions", () => {
     loginPage.navigate();
     loginPage.login("tomsmith", "SuperSecretPassword!")
     expect(secureAreaPage.getHeaderText()).equals("Secure Area");
+  });
+
+  it("should hover on figure", () => {
+    hoversPage.navigate();
+    const figureIndex = 1;
+    hoversPage.hoverFigure(figureIndex);
+    expect(hoversPage.getFigureDetailsText(figureIndex)).equals(`name: user${figureIndex}`);
+  });
+
+  it("should send keyboard value", () => {
+    keyPressesPage.navigate();
+    keyPressesPage.sendKeysToTarget("Backspace")
+    expect(keyPressesPage.getResultText()).equals('You entered: BACK_SPACE');
   });
 });
