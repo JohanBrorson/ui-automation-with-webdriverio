@@ -5,7 +5,8 @@
   "repository": "git@github.com:JohanBrorson/ui-automation-with-webdriverio.git",
   "license": "MIT",
   "scripts": {
-    "test": "wdio wdio.conf.js"
+    "test": "wdio wdio.conf.js",
+    "test:actions": "yarn test --suite actions"
   },
   "devDependencies": {
     "@wdio/cli": "^5.13.1",

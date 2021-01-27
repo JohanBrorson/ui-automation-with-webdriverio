@@ -1,3 +1,11 @@
+const urls = require('./urls');
+const TEST_ENV = process.env.TEST_ENV
+
+let baseUrl = urls['prod'];
+if (TEST_ENV && Object.keys(urls).includes(TEST_ENV)) {
+    baseUrl = urls[TEST_ENV];
+}
+
 exports.config = {
     //
     // ====================
@@ -24,6 +32,11 @@ exports.config = {
     specs: [
         './test/**/*.js'
     ],
+    suites: {
+        actions: [
+            './test/actions/*.test.js'
+        ]
+    },
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -93,7 +106,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://the-internet.herokuapp.com/',
+    baseUrl,
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
