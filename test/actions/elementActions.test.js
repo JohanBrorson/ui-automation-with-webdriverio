@@ -1,11 +1,8 @@
 const { expect } = require("chai");
 const internetPage = require("../../pages/internet.page");
 const checkboxesPage = require("../../pages/checkboxes.page");
-const loginPage = require("../../pages/login.page");
-const secureAreaPage = require("../../pages/secure-area.page");
 const hoversPage = require("../../pages/hovers.page");
 const keyPressesPage = require("../../pages/key-presses.page");
-const user = require("../../testdata/user")
 
 describe("Test element actions", () => {
   it("should click element", () => {
@@ -25,12 +22,6 @@ describe("Test element actions", () => {
     expect(checkboxesPage.checkbox(1).isSelected(1)).equals(true);
     checkboxesPage.clickCheckbox(1);
     expect(checkboxesPage.checkbox(1).isSelected(1)).equals(false);
-  });
-
-  it("should login", () => {
-    loginPage.navigate();
-    loginPage.login(user.name, user.password)
-    expect(secureAreaPage.getHeaderText()).equals("Secure Area");
   });
 
   it("should hover on figure", () => {
