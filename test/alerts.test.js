@@ -7,7 +7,7 @@ describe("Javascript Alerts", function () {
     expect(alertsPage.getAlertText()).equals("I am a JS Alert");
     alertsPage.acceptAlert();
     expect(alertsPage.getResultText()).equals(
-      "You successfuly clicked an alert"
+      "You successfully clicked an alert"
     );
   });
 
