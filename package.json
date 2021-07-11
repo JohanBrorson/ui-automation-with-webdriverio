@@ -18,7 +18,7 @@
     "@wdio/sync": "^5.13.0",
     "chai": "^4.2.0",
     "chai-webdriverio": "^1.0.0",
-    "chromedriver": "^88.0.0",
+    "chromedriver": "^91.0.1",
     "wdio-chromedriver-service": "^5.0.2",
     "webdriverio": "^5.13.1"
   }
